@@ -1,0 +1,8 @@
+# kustomization.yml
+namespace: "petclinic-prod-ns"
+bases:
+- ../base
+patches:
+- replica-count.yml
+
+
