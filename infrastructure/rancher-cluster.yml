@@ -1,5 +1,5 @@
 nodes:
-  - address: 3.238.225.98
+  - address: 172.31.68.248   #buraya public ip yazıyoruz ama aws de aynı vpc de olduğu için private ip kullandık. 
     internal_address: 172.31.68.248
     user: ubuntu
     role: [controlplane, worker, etcd]
