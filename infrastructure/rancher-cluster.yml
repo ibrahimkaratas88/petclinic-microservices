@@ -1,0 +1,20 @@
+nodes:
+  - address: 172.31.68.248   #buraya public ip yazıyoruz ama aws de aynı vpc de olduğu için private ip kullandık. 
+    internal_address: 172.31.68.248
+    user: ubuntu
+    role: [controlplane, worker, etcd]
+
+services:
+  etcd:
+    snapshot: true
+    creation: 6h
+    retention: 24h
+
+ssh_key_path: ~/.ssh/ibrahim-rancher.key
+
+# Required for external TLS termination with
+# ingress-nginx v0.22+
+ingress:
+  provider: nginx
+  options:
+    use-forwarded-headers: "true"
